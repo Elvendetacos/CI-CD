@@ -15,7 +15,7 @@ pipeline {
             steps {
                 script {
                     docker.image(DOCKER_IMAGE).inside {
-                        sh 'pip install --no-cache-dir -r requirements.txt'
+                        sh 'pip install --no-cache-dir -r requirements.txt --user root'
                         sh 'pytest test.py'
                     }
                 }
